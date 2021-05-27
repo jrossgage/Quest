@@ -14,6 +14,8 @@ namespace Quest
                 advenRobe.Length = 12;
                 advenRobe.Colors = new List<string> { "blue", "green", "yellow" };
             }
+            Hat advenHat = new Hat();
+            advenHat.ShininessLevel = 9;
 
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
@@ -52,7 +54,7 @@ namespace Quest
             Console.Write("What is your name, Adventurer? > ");
             string userName = Console.ReadLine();
 
-            Adventurer theAdventurer = new Adventurer(userName, advenRobe);
+            Adventurer theAdventurer = new Adventurer(userName, advenRobe, advenHat);
             Console.WriteLine(theAdventurer.GetDescription());
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
