@@ -17,6 +17,8 @@ namespace Quest
             Hat advenHat = new Hat();
             advenHat.ShininessLevel = 9;
 
+            Prize prize = new Prize("Yay!");
+
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
             //   the text of the challenge
@@ -67,6 +69,7 @@ namespace Quest
                 favoriteBeatle
             };
 
+
             // Loop through all the challenges and subject the Adventurer to them
             bool tryAgain = true;
             while (tryAgain)
@@ -90,6 +93,7 @@ namespace Quest
                 {
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
+                prize.ShowPrize(theAdventurer);
                 Console.Write("Would you like to take the quest again? Y/N > ");
                 string userAnswer = Console.ReadLine().ToLower();
                 if (userAnswer == "y")
