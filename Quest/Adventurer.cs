@@ -8,17 +8,19 @@ namespace Quest
         // Note: the constructor is defined below.
         public string Name { get; }
         public Robe ColorfulRobe { get; }
+        public Hat Hat { get; set; }
 
         // This is a mutable property it has a "get" and a "set"
         //  So it can be read and changed by any code in the application
         public int Awesomeness { get; set; }
 
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name, Robe robe)
+        public Adventurer(string name, Robe robe, Hat avenHat)
         {
             Name = name;
             Awesomeness = 50;
             ColorfulRobe = robe;
+            Hat = avenHat;
         }
 
 
@@ -50,7 +52,7 @@ namespace Quest
 
         public string GetDescription()
         {
-            return ($"You are {Name} and your robe is {ColorfulRobe.Length} inches long and {string.Join(", ", ColorfulRobe.Colors)}.");
+            return ($"You are {Name}, your hat is {Hat.ShininessDescription}, your robe is {ColorfulRobe.Length} inches long and {string.Join(", ", ColorfulRobe.Colors)}.");
         }
     }
 }
